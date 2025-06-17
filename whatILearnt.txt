@@ -1,0 +1,35 @@
+browser router -> context provider
+
+
+the structure is something like -> 
+
+<BrowserRouter>
+<Routes> 
+ <Route>
+</Routes>
+</BrowserRouter>
+
+
+MPA vs SPA -> 
+<header>
+ <main content> 
+ <footer>
+
+in SPAs, main content gets changed avoiding the page from getting refreshed
+
+<Route path="" element ={} />
+
+
+to use css on <link> 
+treat it as an anchor tag
+
+a {
+  text-decoration: none;
+} for no underline
+
+
+miragejs -> used to mock a server
+
+
+
+
