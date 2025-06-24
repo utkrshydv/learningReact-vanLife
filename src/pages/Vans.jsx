@@ -2,7 +2,7 @@ import { useEffect, useState} from "react"
 import { Link } from "react-router-dom"
 
 function Vans(){
-
+  
   const [ vans, setVans ] = useState([])
 
    useEffect(() => {

@@ -31,5 +31,10 @@ a {
 miragejs -> used to mock a server
 
 
+nested Routes
 
+<Route>
+  <Route/>
+  <Route/>
+</Route>
 

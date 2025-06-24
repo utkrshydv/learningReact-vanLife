@@ -4,6 +4,10 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from "./pages/Vans"
 import VanDetails from "./pages/VanDetails"
+import Layout from './components/Layout'
+import Dashboard from "./pages/Host/Dashbord"
+import Reviews from "./pages/Host/Reviews"
+import Income from "./pages/Host/Income"
 
 import "./index.css"
 
@@ -15,19 +19,17 @@ function App() {
 
   return (
    <BrowserRouter>
-   <header>
-      <Link className="site-logo" to="/">#VanLife</Link>
-    <nav>
-      <Link to="/about">About</Link>
 
-      <Link to="/vans">Vans</Link>
-    </nav>
-   </header>
-   <Routes>
-    <Route path="/" element = {<Home />}/>
-    <Route path="/about" element={<About/>}/>
-    <Route path="/vans" element={<Vans />}/>
-    <Route path = "/vans/:id" element = {<VanDetails />} />
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element = {<Home />}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/vans" element={<Vans />}/>
+        <Route path = "/vans/:id" element = {<VanDetails />} />
+        <Route path = "/host" element = {<Dashboard />} />
+        <Route path = "/host/income" element = {<Income />} />
+        <Route path = "/host/reviews" element = {<Reviews />} />
+    </Route>
    </Routes>
    </BrowserRouter>
   )
