@@ -38,3 +38,76 @@ nested Routes
   <Route/>
 </Route>
 
+when to nest a page -> 
+when we want some ui to be the same on different pages
+
+whats layout route ->
+contains the shared ui at the head/top level
+uses an outlet
+
+whats <Outlet /> ->
+used inside layout routes/ parent route
+represents the place wherew the child elements will be rendered
+
+what's index route ->
+default element we want to render when the path of the parent route matches. It gives us a chance to render
+an element inside the parent's <Outlet /> at the same path
+as the parent route.
+
+<NavLink allows using className and style />
+
+Render Props -> 
+the terms render prop refers to a technique for sharing ode between react components using a prop whose value is a function
+
+Higher order components -> 
+ a function that takes a component and returns a new compponent with extra powers 
+
+
+ wrapper components/ classes ->
+ component that wraps another to share layout or styling
+
+ // 1. This is our HOC
+function withCounter(WrappedComponent) {
+  return function EnhancedComponent(props) {
+    const [count, setCount] = React.useState(0);
+
+    const increment = () => setCount(prev => prev + 1);
+
+    return <WrappedComponent count={count} increment={increment} {...props} />;
+  };
+}
+
+
+// 2. Normal Component
+function ClickCounter({ count, increment }) {
+  return <button onClick={increment}>Clicked {count} times</button>;
+}
+
+// 3. Wrap it
+const EnhancedClickCounter = withCounter(ClickCounter);
+
+// 4. Use it
+<EnhancedClickCounter />
+
+
+
+//WrappedComponent
+
+function Card({ children }) {
+  return <div style={{ border: '2px solid red', padding: '20px' }}>{children}</div>;
+}
+
+// Use it like this:
+<Card>
+  <h1>Hello</h1>
+  <p>This is inside a card</p>
+</Card>
+
+navlink adds a active class by default and can be selected in css using .active{}
+
+<NavLink
+  to="/about"
+  className={({ isActive }) => (isActive ? "nav-active" : "nav")}
+>
+  About
+</NavLink>
